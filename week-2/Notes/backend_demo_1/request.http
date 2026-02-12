@@ -1,0 +1,15 @@
+GET http://127.0.0.1:3000/users  
+
+###
+POST http://127.0.0.1:3000/user 
+Content-Type: application/json
+{
+   "id":100,
+   "name":"Riyaz",
+
+}
+   
+###
+PUT http://127.0.0.1:3000/users/id
+
+DELETE http://127.0.1:3000/users/id
