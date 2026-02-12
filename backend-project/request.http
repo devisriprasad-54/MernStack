@@ -1,0 +1,38 @@
+###
+
+POST http://localhost:3000/product-API/products
+Content-Type: application/json
+
+{
+   "productName":"TV",
+   "price":30000,
+   "brand":"sam"
+
+}
+
+###
+
+POST http://localhost:3000/user-API/users
+Content-Type: application/json
+
+{
+  "name":"ravi",
+  "email":"23111@gmail.com",
+  "password":"johhn",
+  "cart":[]
+}
+
+###
+PUT http://localhost:3000/user-API/user-cart/user-id/69816ffb6152d80bf12411f9/product-id/6980735060b91b798d063d54
+Content-Type: application/json
+
+{
+  "productId":"6980d282880f4a88f6aa7141"
+}
+###
+GET http://localhost:3000/user-API/users/698177006152d80bf1241203
+
+
+###
+
+DELETE http://localhost:3000/user-API/user-cart/user-id/69816ffb6152d80bf12411f9/product-id/6980735060b91b798d063d54

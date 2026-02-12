@@ -1,0 +1,43 @@
+###
+
+GET http://127.0.0.1:3000/users-API/users
+
+###
+
+POST  http://127.0.0.1:3000/users-API/users
+Content-Type: application/json
+
+{
+    "username": "John Doe",
+    "password": "password123",
+    "age": 30
+}
+
+###
+
+PUT http://127.0.0.1:3000/users-API/users/698042727517de348755f7b8
+Content-Type: application/json
+
+{
+  "username":"updated name",
+  "password":"newpassword123",
+  "age":35
+}
+
+###
+
+DELETE http://localhost:3000/users-API/users/697dbd2932961b76c911a70a
+
+###
+POST http://localhost:3000/users-API/auth
+Content-Type: application/json  
+
+{
+    "username": "John Doe",
+    "password": "password123"
+}
+
+###Req for protected route
+
+###
+GET http://localhost:3000/users-API/test

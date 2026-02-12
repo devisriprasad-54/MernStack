@@ -1,0 +1,128 @@
+### TO REGISTER USER
+POST http://localhost:4000/user-api/users
+Content-Type: application/json
+
+{
+    "firstName": "user",
+    "lastName": "Doe",
+    "email": "3@gmail.com",
+    "password": "password",
+    "role": "USER"
+}
+
+### TO REGISTER AUTHOR
+POST http://localhost:4000/author-api/authors
+Content-Type: application/json
+
+{
+    "firstName": "Riyaz",
+    "lastName": "Doe",
+    "email": "12345",
+    "password": "password",
+    "role": "AUTHOR"
+}
+### TO LOGIN AUTHOR
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+
+    "email": "1234",
+    "password": "password",
+    "role": "AUTHOR"
+}
+
+### TO LOGIN USER
+POST http://localhost:4000/common-api/login
+Content-Type: application/json
+
+{
+    "email": "3@gmail.com",
+    "password": "password",
+    "role": "USER"
+}
+
+### TO CREATE ARTICLE
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{   "author":"698974f06bccfa6e29e9d1f1",
+    "title": "Article 2",
+    "category":"Technology",
+    "content": "Content 1"
+}
+    
+### TO GET ARTICLE
+GET http://localhost:4000/author-api/articles/698974f06bccfa6e29e9d1f1
+
+###
+
+
+### TO UPDATE ARTICLE
+PUT http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{   "author":"698974f06bccfa6e29e9d1f1",
+    "articleId":"698975a1b5e2edd5b12a3f22",
+    "title": "updated Article 1",
+    "category":"Technology",
+    "content": "updated Content 1"
+}
+
+### TO DELETE ARTICLE
+DELETE http://localhost:4000/author-api/articles/698999a8bc27cca2209e1acb
+Content-Type: application/json
+
+{
+    "author":"698974f06bccfa6e29e9d1f1"
+}
+
+### TO LOGOUT 
+GET http://localhost:4000/common-api/logout
+
+
+### TO READ ARTICLES
+GET http://localhost:4000/user-api/read-articles
+
+
+### To read all artices
+
+GET http://localhost:4000/admin-api/articles/698974f06bccfa6e29e9d1f1
+
+###To block the user
+
+PUT http://localhost:4000/admin-api/block-user
+Content-Type: application/json
+
+{
+    "userId": "698974f06bccfa6e29e9d1f1"
+}
+
+###
+
+PUT http://localhost:4000/admin-api/unblock-user
+Content-Type: application/json
+
+{
+    "userId": "698974f06bccfa6e29e9d1f1"
+}
+
+
+
+### Change the password
+
+PUT http://localhost:4000/common-api/change-password
+Content-Type: application/json
+
+{
+    "userId":"69897769f8c3be24149183da",
+    "currentPassword":"password",
+    "newPassword":"111"
+}
+
+
+
+
+### TEST
+
+GET http://localhost:4000/test
