@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+.sidebar{
+    background-color: purple;
+    width: 300px;;
+   height: 850px;
+   flex-shrink: 0;
+
+}
+main h2{
+    
+}
+main{
+    background-color: grey;
+    text-align: center;
+    display: flex;
+}
+main h2{
+    display: inline;
+}
+.bar{
+    flex: 1;
+}
+.cards{
+    margin: auto;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+.card{
+    
+    background-color: orange;
+    width:200px;
+    height: 100px;
+    
+}

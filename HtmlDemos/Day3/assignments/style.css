@@ -1,0 +1,139 @@
+.parent{
+    margin: auto;
+    margin-top: 100px;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid;
+    width:800px;
+    height:750px;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 250px 250px 250px;
+}
+.child1{
+    
+    text-align: left;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    .mid{
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .fst{
+        color:grey;
+        font-size: 15px;
+    }
+    .last{
+        font-size: 10px;
+        color: grey;
+    }
+}
+.c1-sub{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    img{
+        margin-top: 20px;
+        width:200px;
+        height: 200px;
+    }
+}
+.child2{
+    grid-column: 3/5;
+    grid-row: 1/2;
+    text-align: center;
+    grid-row: 1/2;
+    h2{
+        font-size: 35px;
+        font-family: 'Times New Roman', Times, serif
+    }
+    background-color: whitesmoke;
+}
+
+.child3{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: rgb(231, 108, 30);
+    text-align: center;
+    b{
+        color: white;
+    }
+    .info{
+        margin-left: 50px;
+        width:150px;
+    }
+    a{
+        margin-top: 10px;
+        color: yellow;
+    }
+    img{
+        margin-top: 50px;
+        width:150px;
+    }
+}
+.child4{
+    text-align: center;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    p{
+        width: 120px;
+        font-size: 20px;
+    }
+    img{
+    }
+    
+}
+.c4-sub{
+    grid-column: 3/4;
+    grid-row: 2/3;
+    text-align: left;
+    a{
+        color: blue;
+    }
+    p{
+        margin-top: 30px;
+        color: grey;
+        width:150px;
+    }
+}
+.child5{
+    
+    grid-column: 4/5;
+    grid-row: 2/4;
+    
+    img{
+        margin-top: 20px;
+        border-radius: 70px;
+    }
+    p{
+        margin-left: 30px;
+        width:120px;
+    }
+    background-color: plum;
+    text-align: center;
+    button{
+        background-color: yellow;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+}
+.child6{
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-color: white;
+    text-align: center;
+}
+.child7{
+    text-align: center;
+    b{
+        margin-top: 20px;
+        color: white;
+        font-size: 20px;
+    }
+    img{
+        margin-top: 15px;
+    }
+    grid-column: 2/4;
+    grid-row: 3/4;
+    background-color: grey;
+    
+}

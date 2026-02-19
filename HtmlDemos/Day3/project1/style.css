@@ -1,0 +1,45 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    height: 65px;
+    background-color:black;
+}
+nav ul{
+    padding-left: 600px;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+nav li{
+    padding-left: 15px;
+}
+nav img{
+    border-radius: 50px;
+}
+a{
+    color: white;
+}
+.row{
+    display: flex;
+    padding-top: 60px;
+    justify-content: space-around;
+}
+p{
+    width:200px;
+    padding-left: 60px;
+}
+.card{
+    text-align: center;
+    width:300px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 20px;
+}
+main img{
+    width: 100px;
+}
+.card button{
+    background-color: blue;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}

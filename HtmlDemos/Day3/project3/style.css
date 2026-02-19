@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #4CAF50;
+  --padding-size: 12px;
+}
+
+button {
+  background: var(--primary-color);
+  padding: var(--padding-size);
+  color: white;
+  border: none;
+}
+h1{
+    font-size:clamp(1.5rem,10vw,5rem);
+}
+img{
+    width:100px;
+    max-width: 100px;
+}
