@@ -1,0 +1,21 @@
+@media screen and (max-width:600px){
+    body{
+        background-color: blue;
+    }
+}
+@media  screen and (min-width:701px) {
+    img{
+        display: none;
+    }
+    body{
+        background-color: green;
+    }
+}
+@media screen {
+    
+}
+@media print{
+    body{
+        display: none;
+    }
+}

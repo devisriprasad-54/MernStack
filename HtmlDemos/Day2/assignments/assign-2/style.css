@@ -1,0 +1,36 @@
+nav{
+    margin: 0;
+    padding-top: 50px;
+    border-radius: 0;
+    padding-left: 100px;
+    background-color: rgb(233, 227, 227);
+    width: 100%;
+    height: 300px
+}
+.hello{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+    display: inline;
+}
+nav p{
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+nav button{
+    background-color:aqua;
+}
+.heading{
+    width:300px;
+}
+main{
+    display: flex;
+    justify-content: space-around;
+}
+main p{
+    font-size: 20px;
+}
+main button{
+    font-size: 25px;
+    background-color: rgb(124, 116, 116);
+}
