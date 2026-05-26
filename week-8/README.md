@@ -62,4 +62,4 @@ A React application rendering a product listing page using static mock data and 
     *   **Props**: `product` (Object containing individual item details).
     *   **UI layout**: Renders details inside a pink box (`bg-pink-50 w-65 p-5 text-center`):
         Includes product image, name header (`<h3>`), brand subheader (`<h5>`), description paragraph, and price.
-    deployment link => https://vercel.com/devirsriprasad/products-page-app/FMo1Tc6SWCoAFHTVCkq4xxCnzbaP
+    deployment link =>[ https://vercel.com/devirsriprasad/products-page-app/FMo1Tc6SWCoAFHTVCkq4xxCnzbaP](https://mern-stack-six-fawn.vercel.app)
