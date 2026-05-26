@@ -41,7 +41,7 @@ function WriteArticle() {
     articleObj.author = authorId;
     try {
       const res = await axios.post(
-        "/author-api/articles",
+        "https://mernstack-3-pnqa.onrender.com/author-api/articles",
         articleObj,
         { withCredentials: true }
       );

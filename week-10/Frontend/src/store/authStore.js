@@ -1,6 +1,9 @@
 import { create } from "zustand";
 import axios from "axios";
 
+// API Base URL - use environment variable or default to Render backend
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://mernstack-3-pnqa.onrender.com";
+
 export const useAuth = create((set) => ({
   currentUser: null,
   loading: false,
@@ -13,7 +16,7 @@ export const useAuth = create((set) => ({
       // Log exactly what we are sending so we can debug
       console.log("[LOGIN] Sending credentials:", JSON.stringify(userCredWithRole));
       //make api call
-      let res = await axios.post("/common-api/login", userCredWithRole, { withCredentials: true });
+      let res = await axios.post(`${API_BASE_URL}/common-api/login`, userCredWithRole, { withCredentials: true });
       // console.log("res is ", res);
       //update state
       set({
@@ -38,7 +41,7 @@ export const useAuth = create((set) => ({
       //set loading state
       set({ loading: true, error: null });
       //make logout api req
-      await axios.get("/common-api/logout", { withCredentials: true });
+      await axios.get(`${API_BASE_URL}/common-api/logout`, { withCredentials: true });
       //update state
       set({
         loading: false,
@@ -58,7 +61,7 @@ export const useAuth = create((set) => ({
   checkAuth: async () => {
     try {
       set({ loading: true });
-      const res = await axios.get("/common-api/check-auth", { withCredentials: true });
+      const res = await axios.get(`${API_BASE_URL}/common-api/check-auth`, { withCredentials: true });
 
       set({
         currentUser: res.data.payload,

@@ -11,7 +11,7 @@ function UsersList() {
     const fetchUsers = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("/admin-api/users-list", { withCredentials: true });
+        const res = await axios.get("https://mernstack-3-pnqa.onrender.com/admin-api/users-list", { withCredentials: true });
         setUsers(res.data.payload || []);
       } catch (err) {
         setError(err.response?.data?.message || "Something went wrong fetching users");
@@ -25,7 +25,7 @@ function UsersList() {
   const handleToggleBlock = async (userId, currentStatus) => {
     try {
       const endpoint = currentStatus ? "block" : "unblock";
-      await axios.put(`/admin-api/${endpoint}/${userId}`, {}, { withCredentials: true });
+      await axios.put(`https://mernstack-3-pnqa.onrender.com/admin-api/${endpoint}/${userId}`, {}, { withCredentials: true });
       setUsers(users.map(user => 
         user._id === userId ? { ...user, isActive: !currentStatus } : user
       ));

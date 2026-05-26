@@ -48,7 +48,7 @@ function EditArticle() {
       setLoading(true);
       const authorId = currentUser._id || currentUser.userId;
       const res = await axios.put(
-        `/author-api/articles/${article._id}/${authorId}`,
+        `https://mernstack-3-pnqa.onrender.com/author-api/articles/${article._id}/${authorId}`,
         data,
         { withCredentials: true }
       );

@@ -65,13 +65,13 @@ function Register() {
 
     try {
       if (role === 'user') {
-        let res = await axios.post('/user-api/users', formData)
+        let res = await axios.post('https://mernstack-3-pnqa.onrender.com/user-api/users', formData)
         if (res.status === 201) {
           navigate('/login')
         }
       }
       if (role === 'author') {
-         let res = await axios.post('/author-api/users', formData)
+         let res = await axios.post('https://mernstack-3-pnqa.onrender.com/author-api/users', formData)
         if (res.status === 201) {
           setError(null)
           navigate('/login')
@@ -79,7 +79,7 @@ function Register() {
       }
       if (role === 'admin') {
         // Admin registration — sends JSON, no profile image required
-        let res = await axios.post('/admin-api/users', {
+        let res = await axios.post('https://mernstack-3-pnqa.onrender.com/admin-api/users', {
           ...userObj,
         })
         if (res.status === 201) {
