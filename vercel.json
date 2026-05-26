@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "dist",
+  "buildCommand": "npm run build",
+  "env": {
+    "VITE_API_BASE_URL": "https://mernstack-3-pnqa.onrender.com"
+  }
+}
