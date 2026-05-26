@@ -41,6 +41,7 @@ A React application that queries and filters country statistics using a public R
 *   #### Country Card Component (`src/components/CountryCard.jsx`)
     *   **Props**: `country` (Individual country object).
     *   **UI layout**: Renders a card container (`bg-white rounded p-4 shadow`) containing the SVG flag image, common name (`country.name.common`), capital city (`country.capital[0]`), population, and region.
+    *   deployment link => https://vercel.com/devirsriprasad/country-explorer/2JqzXiN34qPXvKbHdiMbxz57yhhr
 
 ---
 
@@ -61,3 +62,4 @@ A React application rendering a product listing page using static mock data and 
     *   **Props**: `product` (Object containing individual item details).
     *   **UI layout**: Renders details inside a pink box (`bg-pink-50 w-65 p-5 text-center`):
         Includes product image, name header (`<h3>`), brand subheader (`<h5>`), description paragraph, and price.
+    deployment link => https://vercel.com/devirsriprasad/products-page-app/FMo1Tc6SWCoAFHTVCkq4xxCnzbaP
