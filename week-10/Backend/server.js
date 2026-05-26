@@ -49,7 +49,11 @@ app.use('/admin-api',AdminRouter)
 app.use('/common-api',commonRouter)
 
 // Serve React frontend for all other routes (SPA)
-app.get('*', (req, res) => {
+app.use('/', (req, res, next) => {
+    // Skip API routes
+    if (req.path.startsWith('/user-api') || req.path.startsWith('/author-api') || req.path.startsWith('/admin-api') || req.path.startsWith('/common-api')) {
+        return next();
+    }
     res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'))
 })
 
