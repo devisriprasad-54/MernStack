@@ -16,10 +16,26 @@ const __dirname = path.dirname(__filename)
 
 config()
 const app = exp()
+
+// Allowed origins
+const allowedOrigins = [
+  'https://mern-stack-9t7q.vercel.app',
+  'http://localhost:5173',
+  'http://localhost:3000'
+];
+
 //use cors middleware
 app.use(cors({
-    origin: true,
-    credentials: true, // required to allow cookies to be sent/received cross-origin
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }))
 //add body parser middleware
 app.use(exp.json())//to parse the incoming requests with JSON payloads
