@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"npm run dev -w Frontend\" \"npm run dev -w Backend\"",
-    "build": "npm run build -w Frontend",
-    "start": "node Backend/server.js",
-    "install-all": "npm install && npm install -w Backend && npm install -w Frontend"
+    "install-all": "npm install && npm install -w Backend && npm install -w Frontend",
+    "build": "npm install -w Backend && npm install -w Frontend && npm run build -w Frontend",
+    "start": "node Backend/server.js"
   },
   "workspaces": [
     "Backend",

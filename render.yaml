@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: mernstack-blog
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: week-10
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
