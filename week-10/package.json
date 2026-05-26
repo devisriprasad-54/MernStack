@@ -1,0 +1,19 @@
+{
+  "name": "mernstack-blog",
+  "version": "1.0.0",
+  "description": "Full-stack blog platform",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w Frontend\" \"npm run dev -w Backend\"",
+    "build": "npm run build -w Frontend",
+    "start": "node Backend/server.js",
+    "install-all": "npm install && npm install -w Backend && npm install -w Frontend"
+  },
+  "workspaces": [
+    "Backend",
+    "Frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

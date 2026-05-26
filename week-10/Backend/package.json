@@ -1,19 +1,28 @@
 {
-  "name": "mernstack-blog",
+  "name": "blogapp",
   "version": "1.0.0",
-  "description": "Full-stack blog platform",
+  "description": "MERN Stack Blog Platform - Backend",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "concurrently \"npm run dev -w Frontend\" \"npm run dev -w Backend\"",
-    "build": "npm run build -w Frontend",
-    "start": "node Backend/server.js",
-    "install-all": "npm install && npm install -w Backend && npm install -w Frontend"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
-  "workspaces": [
-    "Backend",
-    "Frontend"
-  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.9.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.5",
+    "multer": "^2.1.1"
+  },
   "devDependencies": {
-    "concurrently": "^9.0.1"
+    "nodemon": "^3.1.11"
   }
 }
