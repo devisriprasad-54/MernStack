@@ -17,27 +17,37 @@ const __dirname = path.dirname(__filename)
 config()
 const app = exp()
 
+config()
+const app = exp()
+
 //use cors middleware
 app.use(cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps or curl requests)
-      if (!origin) return callback(null, true);
-      
-      // Allow Vercel preview and production URLs
-      if (origin.includes('vercel.app') || 
-          origin.includes('localhost') ||
-          origin === 'http://localhost:5173' ||
-          origin === 'http://localhost:3000') {
+    origin: function(origin, callback) {
+      // Allow requests with no origin (mobile apps, curl requests)
+      if (!origin) {
         return callback(null, true);
       }
       
-      // For all other origins, reject
-      callback(new Error('CORS not allowed'), false);
+      // Allow all Vercel domains, localhost, and Render domains
+      const allowedPatterns = [
+        'vercel.app',
+        'localhost',
+        'onrender.com'
+      ];
+      
+      const isAllowed = allowedPatterns.some(pattern => origin.includes(pattern));
+      
+      if (isAllowed) {
+        callback(null, true);
+      } else {
+        callback(null, false); // Silently reject non-allowed origins
+      }
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 200,
+    maxAge: 86400
 }))
 //add body parser middleware
 app.use(exp.json())//to parse the incoming requests with JSON payloads
