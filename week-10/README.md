@@ -4,7 +4,7 @@ Hey there! Welcome to the repository for my premium full-stack blog application.
 
 ---
 
-## ✨ Features at a Glance
+## Features at a Glance
 
 - **Role-Based Access Control (RBAC):** Three dedicated user roles:
   - **User:** Can register, browse active articles, read comments, and manage their personal profile.
@@ -16,7 +16,7 @@ Hey there! Welcome to the repository for my premium full-stack blog application.
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 - **Frontend:** Deployed on **Vercel**
 - **Backend:** Deployed on **Render**
@@ -24,7 +24,7 @@ Hey there! Welcome to the repository for my premium full-stack blog application.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - **Framework:** React + Vite
@@ -41,7 +41,7 @@ Hey there! Welcome to the repository for my premium full-stack blog application.
 
 ---
 
-## 🚀 Getting Started Locally
+## Getting Started Locally
 
 Follow these steps to get the project up and running on your local machine.
 
@@ -83,7 +83,7 @@ npm run dev
 
 ---
 
-## 💡 Architecture & Design Notes
+##  Architecture & Design Notes
 
 - **Pre-flight Form Validation:** Registration screens enforce strong validations (required field checking, role enforcement, and file format validation) before making external API requests, keeping error feedback snappy.
 - **Sticky Footer Wrapper:** By architecting the main `RootLayout` with a `flex flex-col min-h-screen` container and allowing the inner main view to `flex-grow`, the footer is forcefully kept pinned to the bottom of the screen.
