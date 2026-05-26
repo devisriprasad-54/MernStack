@@ -3,7 +3,8 @@ services:
     name: mernstack-blog
     runtime: node
     plan: free
-    buildCommand: npm install && npm run build
+    rootDir: week-10
+    buildCommand: npm install && npm install -w Backend && npm install -w Frontend && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
