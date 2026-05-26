@@ -27,7 +27,7 @@ function Articles() {
       try {
         setLoading(true)
         setError(null)
-        const res = await axios.get('https://blogapp-backend-7kra.onrender.com/user-api/articles', {
+        const res = await axios.get('/user-api/articles', {
           withCredentials: true,
         })
         setArticles(res.data.articles || [])

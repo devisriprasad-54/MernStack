@@ -11,7 +11,7 @@ function AuthorsList() {
     const fetchAuthors = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("https://blogapp-backend-7kra.onrender.com/admin-api/authors-list", { withCredentials: true });
+        const res = await axios.get("/admin-api/authors-list", { withCredentials: true });
         setAuthors(res.data.payload || []);
       } catch (err) {
         setError(err.response?.data?.message || "Something went wrong fetching authors");
@@ -25,7 +25,7 @@ function AuthorsList() {
   const handleToggleBlock = async (authorId, currentStatus) => {
     try {
       const endpoint = currentStatus ? "block" : "unblock";
-      await axios.put(`https://blogapp-backend-7kra.onrender.com/admin-api/${endpoint}/${authorId}`, {}, { withCredentials: true });
+      await axios.put(`/admin-api/${endpoint}/${authorId}`, {}, { withCredentials: true });
       setAuthors(authors.map(author => 
         author._id === authorId ? { ...author, isActive: !currentStatus } : author
       ));

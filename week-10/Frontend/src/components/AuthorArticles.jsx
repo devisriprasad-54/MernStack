@@ -44,7 +44,7 @@ function AuthorArticles() {
         setError(null);
         const authorId = currentUser._id || currentUser.userId;
         const res = await axios.get(
-          `https://blogapp-backend-7kra.onrender.com/author-api/articles/${authorId}`,
+          `/author-api/articles/${authorId}`,
           { withCredentials: true }
         );
         setArticles(res.data.articles || []);

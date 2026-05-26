@@ -41,7 +41,7 @@ function WriteArticle() {
     articleObj.author = authorId;
     try {
       const res = await axios.post(
-        "https://blogapp-backend-7kra.onrender.com/author-api/articles",
+        "/author-api/articles",
         articleObj,
         { withCredentials: true }
       );

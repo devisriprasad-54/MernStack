@@ -7,7 +7,13 @@ import AdminRouter from  './APIs/AdminAPI.js'
 import mongoose, { mongo } from "mongoose"
 import cookieParser from "cookie-parser"  
 import commonRouter from './APIs/CommonAPI.js' 
-import cors from 'cors' 
+import cors from 'cors'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 config()
 const app = exp()
 //use cors middleware
@@ -19,6 +25,9 @@ app.use(cors({
 app.use(exp.json())//to parse the incoming requests with JSON payloads
 //cookie parser middleware
 app.use(cookieParser())
+
+// Serve static files from Frontend dist
+app.use(exp.static(path.join(__dirname, '../Frontend/dist')))
 //connect to DB
 const connectDB=async()=>{
    try{ await connect(process.env.DB_URL)//process.env is used to access the environment variables
@@ -38,6 +47,12 @@ app.use('/user-api',UserRouter)
 app.use('/author-api',AuthorRouter)
 app.use('/admin-api',AdminRouter)
 app.use('/common-api',commonRouter)
+
+// Serve React frontend for all other routes (SPA)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../Frontend/dist/index.html'))
+})
+
 //dealing with invalid paths
 app.use((req,res)=>{
     res.status(404).json({message:`${req.url} is Invalid path`})

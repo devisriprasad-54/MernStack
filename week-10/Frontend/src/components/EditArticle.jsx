@@ -48,7 +48,7 @@ function EditArticle() {
       setLoading(true);
       const authorId = currentUser._id || currentUser.userId;
       const res = await axios.put(
-        `https://blogapp-backend-7kra.onrender.com/author-api/articles/${article._id}/${authorId}`,
+        `/author-api/articles/${article._id}/${authorId}`,
         data,
         { withCredentials: true }
       );

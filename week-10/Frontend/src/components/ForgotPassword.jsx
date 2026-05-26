@@ -32,7 +32,7 @@ function ForgotPassword() {
     try {
       setLoading(true)
       setResetError(null)
-      const response = await axios.post('https://blogapp-backend-7kra.onrender.com/common-api/forgot-password', formData)
+      const response = await axios.post('/common-api/forgot-password', formData)
       toast.success(response.data.message || 'Password reset successful')
       navigate('/login')
     } catch (err) {
