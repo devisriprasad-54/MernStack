@@ -17,9 +17,6 @@ const __dirname = path.dirname(__filename)
 config()
 const app = exp()
 
-config()
-const app = exp()
-
 //use cors middleware
 app.use(cors({
     origin: function(origin, callback) {
