@@ -27,9 +27,7 @@ function Articles() {
       try {
         setLoading(true)
         setError(null)
-        const res = await axios.get('https://mernstack-3-pnqa.onrender.com/user-api/articles', {
-          withCredentials: true,
-        })
+        const res = await axios.get('https://mernstack-3-pnqa.onrender.com/common-api/articles')
         setArticles(res.data.articles || [])
       } catch (err) {
         setError(err.response?.data?.message || 'Failed to load articles.')

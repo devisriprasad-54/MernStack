@@ -1,6 +1,7 @@
 import exp from "express"
 import {register,authenticateUser} from '../Services/authService.js'
 import UserTypeModel from '../Models/UserModel.js'
+import ArticleTypeModel from '../Models/ArticleModel.js'
 import { verifyToken } from "../Middlewares/verifyToken.js"
 import bcrypt from 'bcrypt'
  const commonRouter = exp.Router()
@@ -105,4 +106,21 @@ commonRouter.get('/check-auth',verifyToken("USER","AUTHOR","ADMIN"),(req,res)=>{
         payload:req.user
     })
 })
+
+// Public articles endpoint (no authentication required)
+commonRouter.get('/articles', async (req, res) => {
+    try {
+        const articles = await ArticleTypeModel.find({ isArticleActive: true }).populate("author", "firstName lastName");
+        res.status(200).json({
+            message: "Articles",
+            articles
+        });
+    } catch (err) {
+        res.status(500).json({
+            message: "Failed to fetch articles",
+            error: err.message
+        });
+    }
+});
+
 export default commonRouter
