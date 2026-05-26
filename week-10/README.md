@@ -89,3 +89,4 @@ npm run dev
 - **Sticky Footer Wrapper:** By architecting the main `RootLayout` with a `flex flex-col min-h-screen` container and allowing the inner main view to `flex-grow`, the footer is forcefully kept pinned to the bottom of the screen.
 
 Feel free to fork, explore the code, and submit pull requests if you have ideas for enhancements!
+deployment link => https://vercel.com/devirsriprasad/mern-stack/9Hh5hmqHubvMBwackwk41PfyGw1v
